@@ -1,8 +1,8 @@
 #!/bin/bash
 pkg cl
 pkg update 
-pkg in wget x11-repo 
-pkg in termux-x11-nightly
+pkg in wget x11-repo -y
+pkg in termux-x11-nightly -y
 wget https://github.com/spz2020/SpzBox/releases/download/glibc/glibc.tar.xz 
 tar xf glibc.tar.xz -C $PREFIX
 wget https://github.com/spz2020/SpzBox/releases/download/wine/wine-8.21-x86.tar.xz
