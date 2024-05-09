@@ -1,11 +1,8 @@
 #!/bin/bash
-termux-change-repo
-pkg upg
-# 需要再执行
-termux-change-repo
 pkg cl
+pkg update 
 pkg in wget x11-repo 
-pkg in 
+pkg in termux-x11-nightly
 wget https://github.com/spz2020/SpzBox/releases/download/glibc/glibc.tar.xz 
 tar xf glibc.tar.xz -C $PREFIX
 wget https://github.com/spz2020/SpzBox/releases/download/wine/wine-8.21-x86.tar.xz
