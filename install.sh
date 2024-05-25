@@ -18,16 +18,18 @@ source ~/.bashrc
 echo '#!/data/data/com.termux/files/usr/bin/bash 
 export LD_PRELOAD=
 /data/data/com.termux/files/usr/glibc/bin/box86 '"$HOME/wine/bin/wine "'"$@"' > /data/data/com.termux/files/usr/bin/wine
-source ~/.bashrc
 echo '#!/data/data/com.termux/files/usr/bin/bash 
 export LD_PRELOAD=
 /data/data/com.termux/files/usr/glibc/bin/box86 '"$HOME/wine/bin/wine regedit "'"$@"' > /data/data/com.termux/files/usr/bin/regedit
 echo '#!/data/data/com.termux/files/usr/bin/bash 
-export WINEPREFIX=~/.wine32 LD_PRELOAD=
+export LD_PRELOAD=
 /data/data/com.termux/files/usr/glibc/bin/box86 '"$HOME/wine/bin/wine winecfg "'"$@"' > /data/data/com.termux/files/usr/bin/winecfg
+echo '#!/data/data/com.termux/files/usr/bin/bash 
+export LD_PRELOAD=
+/data/data/com.termux/files/usr/glibc/bin/box86 '"$HOME/wine/bin/wineserver "'"$@"' > /data/data/com.termux/files/usr/bin/wineserver
 echo '#!/bin/bash 
-export BOX86_NOBANNER=1 WINE=wine WINESERVER=~/wine/bin/wineserver
-wine '"/data/data/com.termux/files/usr/bin/winetricks "'"$@"' > /data/data/com.termux/files/usr/bin/winetricks32
+export BOX86_NOBANNER=1
+wine '"/data/data/com.termux/files/usr/bin/winetricks "'"$@"' > /data/data/com.termux/files/usr/bin/winetricks-spzbox
 chmod +x /data/data/com.termux/files/usr/bin/{wine*,regedit}
 echo "安装结束 现在你可以输入wine并按回车检查是否生效"
 rm -rf glibc.tar.xz wine-8.21-x86.tar.xz
